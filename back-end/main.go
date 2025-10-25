@@ -1,8 +1,10 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/araff-16/rifugio-booker/back-end/controllers"
+    "github.com/gin-gonic/gin"
+    "github.com/gin-contrib/cors"
+    "github.com/araff-16/rifugio-booker/back-end/controllers"
+    "time"
 )
 
 func main() {
