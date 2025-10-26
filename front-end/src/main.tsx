@@ -3,10 +3,11 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { NotFound } from "./components/index.ts";
+import { NotFound, Rifugio } from "./components/index.ts";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
+  { path: "/rifugio/:id", element: <Rifugio /> },
   { path: "*", element: <NotFound /> },
 ]);
 
