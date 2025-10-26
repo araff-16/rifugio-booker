@@ -57,7 +57,7 @@ func main() {
 
 	// Routes
 	r.GET("/rifugios", rifugioController.GetRifugios)
-	// r.GET("/rifugios/:id", rifugioController.GetRifugio)
+	r.GET("/rifugios/:id", rifugioController.GetRifugio)
 
 	// Health check
 	r.GET("/health", func(c *gin.Context) {
