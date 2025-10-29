@@ -9,16 +9,13 @@ function Rifugio() {
 
   const { id } = useParams(); // this gets the id from the route
 
-  const hardid = "68fd1e9d1dfa4eb904cfa6d5";
-
-  console.log("HERRE", id);
   const [rifugio, setrifugio] = useState<RifugioType | null>(null);
 
   useEffect(() => {
     // Make API call using the id
     async function fetchUser() {
       try {
-        const response = await fetch(`http://localhost:8080/rifugios/${hardid}`);
+        const response = await fetch(`http://localhost:8080/rifugios/${id}`);
         if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();
         setrifugio(data);
@@ -34,10 +31,10 @@ function Rifugio() {
 
   return (
     <>
-      <div>Hello World</div>
-
-      <h1>{rifugio.name}</h1>
-      <img className="w-24 h-24" src={rifugio.image} alt="" />
+      <div className="flex items-center flex-col">
+        <h1>{rifugio.name}</h1>
+        <img className="w-24 h-24" src={rifugio.image} alt="" />
+      </div>
     </>
   );
 }
