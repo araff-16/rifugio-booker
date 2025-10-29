@@ -7,28 +7,16 @@ function App() {
   const [data, setdata] = useState<RifugioType[]>([]);
   const navigate = useNavigate(); // <-- get the navigate function from the hook
 
-  // const
-
-  // const doSomething = async () => {
-  //   try {
-  //     const response = await fetch("http://localhost:8080/rifugios");
-  //     const data = await response.json();
-  //     setdata(data);
-  //     console.log(data);
-  //     // const data = await response.json();
-  //   } catch (error) {
-  //     console.error("Error fetching user:", error);
-  //   }
-  // };
-
   useEffect(() => {
     // Make API call using the id
     async function fetchData() {
       try {
         const response = await fetch(`http://localhost:8080/rifugios`);
-        if (!response.ok) throw new Error("Network response was not ok");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
         const data = await response.json();
-        setdata(data);
+        setdata(data ?? []);
       } catch (error) {
         console.error("Error fetching user:", error);
       }
