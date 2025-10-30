@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { NotFound, Rifugio } from "./components/index.ts";
+import "leaflet/dist/leaflet.css";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
